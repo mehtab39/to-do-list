@@ -7,9 +7,9 @@ import { store } from './redux/store';
 import { SnackbarProvider } from "notistack";
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-    <SnackbarProvider maxSnack={3} preventDuplicate>
-               <App />
+    <Provider store={store}> 
+      <SnackbarProvider maxSnack={3} preventDuplicate>
+        <App />
       </SnackbarProvider>
     </Provider>
   </React.StrictMode>,

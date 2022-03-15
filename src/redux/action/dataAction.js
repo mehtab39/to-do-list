@@ -5,8 +5,9 @@ import {
     REMOVECOMPLETEDTODO,
     REMOVEPENDINGTODO
 } from "../actionTypes";
-import short from 'short-uuid';
 
+//generating new uid for tasks for crud operations
+import short from 'short-uuid'; 
 export const add_completed_todo = data => {
     return {
         type: ADDCOMPLETEDTODO,
@@ -38,9 +39,16 @@ export const removeallcompleted = $ => {
     }
 }
 
-// getting each id of the array to be deleted for using array.includes method
-// further to remove 
 
+//converting time object to string
+const timeConvert = date => {
+    return ( date.getDate()+
+"/"+(date.getMonth()+1)+
+"/"+date.getFullYear()+
+" "+date.getHours()+
+":"+date.getMinutes()+
+":"+date.getSeconds())
+}
 
 //deleting list from completed array
 export const removeCompletedTodo = (data) => dispatch => {
@@ -58,15 +66,7 @@ export const addCompletedTodo = (data) => dispatch => {
     dispatch(add_completed_todo(data))
 }
 
-const timeConvert = date => {
-    console.log('date:', date)
-    return ( date.getDate()+
-"/"+(date.getMonth()+1)+
-"/"+date.getFullYear()+
-" "+date.getHours()+
-":"+date.getMinutes()+
-":"+date.getSeconds())
-}
+
 
 //adding to-do for first time
 export const addPendingTodo = (data) => dispatch => {

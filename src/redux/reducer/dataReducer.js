@@ -52,7 +52,7 @@ export const dataReducer = (state = init_state, {
 }
 
 
-
+//filtering the array to remove a task using id
 export const filter = (data, payload) => {
     return data.filter(el => el.id!== payload.id)
 }

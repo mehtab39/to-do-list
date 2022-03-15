@@ -5,8 +5,8 @@ import TabSwitch from "./component/Tabs/Tabs";
 function App() {
   return (
     <div className="App">
-        <Header/>
-        < TabSwitch/>
+         <Header/>
+         <TabSwitch/>
     </div>
   );
 }
